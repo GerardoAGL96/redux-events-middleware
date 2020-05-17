@@ -4,8 +4,8 @@
   "description": "Subscribe to redux actions as events emitter",
   "main": "index.js",
   "scripts": {
-    "build": "node_modules/babel-cli/bin/babel.js src --out-dir lib",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node_modules/.bin/babel src --out-dir lib",
+    "test": "jest"
   },
   "keywords": [
     "react",
@@ -17,14 +17,12 @@
   ],
   "babel": {
     "presets": [
-      "es2015",
-      "es2017"
+      "@babel/env"
     ],
     "plugins": [
       [
-        "transform-runtime",
+        "@babel/plugin-transform-runtime",
         {
-          "polyfill": false,
           "regenerator": true
         }
       ]
@@ -41,11 +39,15 @@
   },
   "homepage": "https://github.com/marcopeg/redux-events-middleware#readme",
   "devDependencies": {
-    "babel-runtime": "^6.26.0",
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-es2017": "^6.24.1"
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-transform-runtime": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/runtime": "^7.9.6",
+    "babel-jest": "^26.0.1",
+    "jest": "^26.0.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "shortid": "^2.2.15"
+  }
 }
